@@ -1,11 +1,11 @@
 {
-  "title": "Debosmita Rit — BCA Student at Techno India (Hooghly)",
-  "heroBadge": "",
-  "heroHeadline": "Building real-world solutions across Cloud, Backend & Enterprise Systems.",
-  "heroDescription": "BCA Student at Techno India (Hooghly Campus, MAKAUT) & AWS Certified graduate with hands-on expertise in Python, Java, Cloud Computing (AWS Lambda, API Gateway), and SAP S/4HANA enterprise ERP.",
-  "heroImage": "/assets/uploads/profile.webp",
-  "portfolioHeading": "Portfolio Works",
-  "portfolioSubheading": "Showcase",
   "blogHeading": "Recent Articles",
-  "draft": false
+  "heroImage": "/assets/uploads/profile.webp",
+  "draft": false,
+  "heroDescription": "BCA student at Techno India, MAKAUT, and AWS Certified, with hands-on experience in Python, Java, AWS Cloud, and SAP S/4HANA.",
+  "heroBadge": "",
+  "portfolioSubheading": "Showcase",
+  "heroHeadline": "Making the World a little bit better ",
+  "title": "Debosmita Rit — BCA Student at Techno India (Hooghly Campus)",
+  "portfolioHeading": "Projects"
 }
