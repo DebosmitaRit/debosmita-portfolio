@@ -1,50 +1,36 @@
 {
-  "title": "About Debosmita Rit",
   "draft": false,
-  "description": "About Debosmita Rit — BCA Student · Cloud & Software Development.",
-  "headline": "BCA Student · Cloud & Software Development",
-  "profileImage": "/assets/uploads/profile.webp",
-  "statusBadge": "Open to Opportunities",
-  "statusLocation": "West Bengal, India",
-  "bioShort": "BCA student at Techno India (Hooghly Campus, MAKAUT), AWS Academy Graduate, and SAP S/4HANA Bootcamp attendee with hands-on proficiency in Python, Java, Cloud Computing (AWS Lambda, API Gateway), and Relational Databases (SQL/PL-SQL).",
   "metrics": [
     {
       "value": "3+",
-      "label": "Years of Coding"
+      "label": "Years of Programming"
     },
     {
-      "value": "6+",
-      "label": "Curated Projects"
+      "value": "2+",
+      "label": "Personal & Team Projects"
     },
     {
-      "value": "99+",
-      "label": "Core Web Vitals"
+      "value": "6.20",
+      "label": "CGPA Till 6th Semester"
     },
     {
-      "value": "0kb",
-      "label": "Framework Bloat"
+      "label": "Avg. Till Date Percentage",
+      "value": "54.50%"
     }
   ],
-  "journeyHeadline": "The Journey & Philosophy",
   "journeyParagraphs": [
     "My obsession with computing began with a fundamental curiosity: why should software feel sterile, sluggish, or clinical? As a BCA (Honours) student (Class of 2023–2027) who fell in love with both computational architecture and typographic design, I've spent the past three years bridging the chasm between expressive visual design and rigorous frontend engineering.",
     "Too much of today's web is weighed down by bloated multi-megabyte client-side runtimes, sluggish layout shifts, and inaccessible abstractions. I champion the Renaissance of the Static Web: building sites with zero-runtime CSS architectures, pre-compiled static generators like Eleventy (11ty), and light sprinkling of reactive behavior via Alpine.js.",
     "My design philosophy is grounded in tangibility. Great web software should evoke the physical tactile delight of high-grade editorial print, the responsive elasticity of mechanical instruments, and the unwavering reliability of architectural structures. Every transition is timed to natural human perception, every color palette is tuned for high-contrast accessibility, and every token is engineered for systemic scale."
   ],
+  "academic": {
+    "degree": "Bachelor of Computer Applications (BCA) Honours",
+    "period": "2023 — 2027 (Expected)",
+    "field": "Techno India (Hooghly Campus) — Affiliated with MAKAUT",
+    "description": "Core curriculum focused on data structures and algorithms, object-oriented programming (Python, Java), relational database management systems (SQL/PL-SQL), computer networks, and cloud computing. Bridging academic foundations with hands-on AWS cloud architectures and enterprise SAP S/4HANA systems."
+  },
+  "statusLocation": "West Bengal, India",
   "experience": [
-    {
-      "period": "Jul 2025 — Dec 2025",
-      "role": "AWS Academy Graduate: Cloud Foundations · Intern",
-      "company": "Techno Billion AI (Salt Lake City, West Bengal)",
-      "description": "Completed a 6-month intensive hybrid cloud architecture and foundations internship. Engineered serverless cloud workflows using AWS Lambda, IAM policies, Amazon S3, and VPC networking infrastructure.",
-      "tags": [
-        "AWS Cloud",
-        "AWS Lambda",
-        "Cloud Foundations",
-        "Cisco Networking",
-        "Serverless"
-      ]
-    },
     {
       "period": "2023 — 2027",
       "role": "BCA (Honours) Student & Web Developer",
@@ -56,6 +42,19 @@
         "HCI",
         "Web Engineering",
         "Database Systems"
+      ]
+    },
+    {
+      "period": "Jul 2025 — Dec 2025",
+      "role": "AWS Academy Graduate: Cloud Foundations · Intern",
+      "company": "Techno Billion AI (Salt Lake City, West Bengal)",
+      "description": "Completed a 6-month intensive hybrid cloud architecture and foundations internship. Engineered serverless cloud workflows using AWS Lambda, IAM policies, Amazon S3, and VPC networking infrastructure.",
+      "tags": [
+        "AWS Cloud",
+        "AWS Lambda",
+        "Cloud Foundations",
+        "Cisco Networking",
+        "Serverless"
       ]
     },
     {
@@ -72,12 +71,6 @@
       ]
     }
   ],
-  "academic": {
-    "degree": "Bachelor of Computer Applications (BCA) Honours",
-    "period": "2023 — 2027 (Expected)",
-    "field": "Techno India (Hooghly Campus) — Affiliated with MAKAUT",
-    "description": "Core curriculum focused on data structures and algorithms, object-oriented programming (Python, Java), relational database management systems (SQL/PL-SQL), computer networks, and cloud computing. Bridging academic foundations with hands-on AWS cloud architectures and enterprise SAP S/4HANA systems."
-  },
   "exploring": {
     "title": "What I'm Exploring Right Now",
     "updated": "Updated October 2026",
@@ -86,5 +79,12 @@
       "Designing fluid, token-governed <strong>editorial web typography</strong> systems with variable optical sizing and proportional tabular numerals.",
       "Writing in-depth technical case studies on the friction points of modern enterprise design operations and WCAG 2.2 accessibility audits."
     ]
-  }
+  },
+  "statusBadge": "",
+  "profileImage": "/assets/uploads/profile.webp",
+  "bioShort": "BCA student at Techno India (Hooghly Campus, MAKAUT), AWS Academy Graduate, and SAP S/4HANA Bootcamp attendee with hands-on proficiency in Python, Java, Cloud Computing (AWS Lambda, API Gateway), and Relational Databases (SQL/PL-SQL).",
+  "journeyHeadline": "The Journey & Philosophy",
+  "headline": "BCA Student · Cloud & Software Development",
+  "title": "About Debosmita Rit",
+  "description": "About Debosmita Rit — BCA Student · Cloud & Software Development."
 }
