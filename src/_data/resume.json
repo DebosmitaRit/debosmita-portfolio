@@ -1,14 +1,27 @@
 {
-  "title": "Resume — Debosmita Rit",
   "draft": false,
-  "description": "Curriculum Vitae and professional resume of Debosmita Rit — BCA (Honours) student (Class of 2023–2027), frontend engineer, and creative technologist.",
   "heading": "Curriculum Vitae",
-  "updated": "Updated October 2026",
-  "availability": "Available for Opportunities",
-  "roleHeadline": "BCA Student · Cloud & Software Development",
-  "pronouns": "",
   "summary": "BCA student at Techno India (Hooghly Campus, MAKAUT), AWS Academy Graduate, and SAP S/4HANA Bootcamp attendee with hands-on proficiency in Python, Java, Cloud Computing (AWS Lambda, API Gateway), and Relational Database Systems (SQL/PL-SQL).",
-  "location": "West Bengal, India • Remote",
+  "selectedWorks": [
+    {
+      "title": "Aura Design System",
+      "url": "/portfolio/aura-design-system/",
+      "tags": "Design Tokens • Accessibility",
+      "description": "A unified design token architecture and accessible component library serving cross-platform products with multi-theme switching and strict WCAG 2.2 compliance."
+    },
+    {
+      "title": "Lumina Mobile Creative Suite",
+      "url": "/portfolio/lumina-mobile-studio/",
+      "tags": "Touch Systems • Motion",
+      "description": "Touch-optimized creative production tool designed for tactile editing, gestural interactions, and instant responsive visual feedback."
+    },
+    {
+      "title": "Synapse Real-time Mesh",
+      "url": "/portfolio/synapse-mesh/",
+      "tags": "Distributed Nodes • Performance",
+      "description": "High-density telemetry dashboard and distributed node monitoring interface with microsecond state updates and zero layout shifts."
+    }
+  ],
   "education": {
     "degree": "Bachelor of Computer Applications — BCA (Honours)",
     "period": "2023 — 2027 (Expected)",
@@ -16,32 +29,21 @@
     "focus": "Data Structures & Algorithms, Object-Oriented Programming (Java, Python), Relational Database Management Systems (SQL/PL-SQL), Cloud Computing (AWS), Computer Networks (Cisco), and Modern Web Systems.",
     "distinction": "Academic distinction in algorithmic problem solving and cloud/enterprise software prototyping."
   },
-  "competencies": [
+  "honors": [
     {
-      "category": "Programming Languages & Software Engineering",
-      "details": "Python, Java, JavaScript (ESNext), SQL, PL/SQL, Object-Oriented Programming (OOP), Data Structures & Algorithms, Modular Code Architecture."
+      "title": "Open Source Contributor",
+      "subtitle": "Static Web & 11ty ecosystem components"
     },
     {
-      "category": "Cloud Computing & Serverless",
-      "details": "Amazon Web Services (AWS Academy Graduate), AWS Lambda, API Gateway, Amazon S3, IAM Security Policies, Serverless Microservices, Cloud Architecture Foundations."
+      "title": "Student Tech Lead",
+      "subtitle": "Department hackathons & coding workshops"
     },
     {
-      "category": "Enterprise ERP & Database Systems",
-      "details": "SAP S/4HANA Bootcamp, Relational Databases (RDBMS, SQL/PL-SQL), Data Modeling & Normalization, Spreadsheet Analytics (Microsoft Excel, Google Sheets, Pivot Tables)."
-    },
-    {
-      "category": "Computer Networks & Protocols",
-      "details": "Cisco Networking Basics Certified, TCP/IP Suite, OSI Model, Subnetting, IPv4/IPv6, Network Topologies, Routing & Switching Fundamentals."
-    },
-    {
-      "category": "Modern Web Development & UI/UX",
-      "details": "Eleventy (11ty v3), Tailwind CSS, Alpine.js, Semantic HTML5, Modern CSS, Responsive Design, WCAG 2.2 Accessibility Standards, Micro-Interactions."
-    },
-    {
-      "category": "Development Tools & Workflow",
-      "details": "Git & GitHub Version Control, Node.js, npm, REST APIs, JSON, Postman, Linux CLI Basics, Static Site Generation (SSG)."
+      "title": "Design Systems Speaker",
+      "subtitle": "Talks on accessible web tokens & typography"
     }
   ],
+  "roleHeadline": "BCA Student · Cloud & Software Development",
   "experience": [
     {
       "role": "AWS Academy Graduate: Cloud Foundations · Intern",
@@ -79,6 +81,9 @@
       ]
     }
   ],
+  "pronouns": "She/Her",
+  "location": "West Bengal, India • Remote",
+  "title": "Resume — Debosmita Rit",
   "certifications": [
     {
       "title": "AWS Academy Graduate - Cloud Foundations",
@@ -120,38 +125,33 @@
       ]
     }
   ],
-  "selectedWorks": [
+  "updated": "Updated October 2026",
+  "competencies": [
     {
-      "title": "Aura Design System",
-      "url": "/portfolio/aura-design-system/",
-      "tags": "Design Tokens • Accessibility",
-      "description": "A unified design token architecture and accessible component library serving cross-platform products with multi-theme switching and strict WCAG 2.2 compliance."
+      "category": "Programming Languages & Software Engineering",
+      "details": "Python, Java, JavaScript (ESNext), SQL, PL/SQL, Object-Oriented Programming (OOP), Data Structures & Algorithms, Modular Code Architecture."
     },
     {
-      "title": "Lumina Mobile Creative Suite",
-      "url": "/portfolio/lumina-mobile-studio/",
-      "tags": "Touch Systems • Motion",
-      "description": "Touch-optimized creative production tool designed for tactile editing, gestural interactions, and instant responsive visual feedback."
+      "category": "Cloud Computing & Serverless",
+      "details": "Amazon Web Services (AWS Academy Graduate), AWS Lambda, API Gateway, Amazon S3, IAM Security Policies, Serverless Microservices, Cloud Architecture Foundations."
     },
     {
-      "title": "Synapse Real-time Mesh",
-      "url": "/portfolio/synapse-mesh/",
-      "tags": "Distributed Nodes • Performance",
-      "description": "High-density telemetry dashboard and distributed node monitoring interface with microsecond state updates and zero layout shifts."
+      "category": "Enterprise ERP & Database Systems",
+      "details": "SAP S/4HANA Bootcamp, Relational Databases (RDBMS, SQL/PL-SQL), Data Modeling & Normalization, Spreadsheet Analytics (Microsoft Excel, Google Sheets, Pivot Tables)."
+    },
+    {
+      "category": "Computer Networks & Protocols",
+      "details": "Cisco Networking Basics Certified, TCP/IP Suite, OSI Model, Subnetting, IPv4/IPv6, Network Topologies, Routing & Switching Fundamentals."
+    },
+    {
+      "category": "Modern Web Development & UI/UX",
+      "details": "Eleventy (11ty v3), Tailwind CSS, Alpine.js, Semantic HTML5, Modern CSS, Responsive Design, WCAG 2.2 Accessibility Standards, Micro-Interactions."
+    },
+    {
+      "category": "Development Tools & Workflow",
+      "details": "Git & GitHub Version Control, Node.js, npm, REST APIs, JSON, Postman, Linux CLI Basics, Static Site Generation (SSG)."
     }
   ],
-  "honors": [
-    {
-      "title": "Open Source Contributor",
-      "subtitle": "Static Web & 11ty ecosystem components"
-    },
-    {
-      "title": "Student Tech Lead",
-      "subtitle": "Department hackathons & coding workshops"
-    },
-    {
-      "title": "Design Systems Speaker",
-      "subtitle": "Talks on accessible web tokens & typography"
-    }
-  ]
+  "availability": "Available for Opportunities",
+  "description": "Curriculum Vitae and professional resume of Debosmita Rit — BCA (Honours) student (Class of 2023–2027), frontend engineer, and creative technologist."
 }
