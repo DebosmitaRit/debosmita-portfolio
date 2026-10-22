@@ -10,7 +10,7 @@
 body {
   font-family: var(--font-sans);
   color: #171717;
-  background-color: #fafafa;
+  background-color: #fcfcfc;
   margin: 0;
   padding: 1.5rem;
   line-height: 1.6;
@@ -27,6 +27,12 @@ body {
 
 .font-sans {
   font-family: var(--font-sans) !important;
+}
+
+/* Background grid styling for hero preview */
+.preview-blueprint-grid {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
 /* Typography Prose styling for Decap body widget */

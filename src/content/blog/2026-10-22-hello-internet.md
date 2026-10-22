@@ -1,6 +1,7 @@
 ---
 draft: false
 title: Hello Internet! This is my new website!
+date: 2026-10-22
 description: This is my first blog post enjoy! I will be posting here often when
   I get a chance or something unique happens
 image: /assets/uploads/laura-adai-zcaql983cx0-unsplash.jpg

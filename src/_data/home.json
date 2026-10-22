@@ -1,11 +1,17 @@
 {
-  "blogHeading": "Recent Articles",
-  "heroImage": "/assets/uploads/profile.webp",
-  "draft": false,
-  "heroDescription": "BCA student at Techno India, MAKAUT, and AWS Certified, with hands-on experience in Python, Java, AWS Cloud, and SAP S/4HANA.",
-  "heroBadge": "",
-  "portfolioSubheading": "Showcase",
-  "heroHeadline": "Making the World a little bit better ",
   "title": "Debosmita Rit — BCA Student at Techno India (Hooghly Campus)",
-  "portfolioHeading": "Projects"
+  "draft": false,
+  "heroBadge": "Open to Opportunities",
+  "heroHeadline": "Making the World a little bit better",
+  "heroDescription": "BCA student at Techno India, MAKAUT, and AWS Certified, with hands-on experience in Python, Java, AWS Cloud, and SAP S/4HANA.",
+  "heroImage": "/assets/uploads/profile.webp",
+  "heroCtaPrimaryText": "Explore Portfolio",
+  "heroCtaPrimaryUrl": "/portfolio/",
+  "heroCtaSecondaryText": "About & Experience",
+  "heroCtaSecondaryUrl": "/about/",
+  "portfolioSubheading": "Showcase",
+  "portfolioHeading": "Projects",
+  "portfolioViewAllText": "View all portfolio works",
+  "blogHeading": "Recent Articles",
+  "blogViewAllText": "View all articles"
 }

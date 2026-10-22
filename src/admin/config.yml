@@ -5,7 +5,7 @@ backend:
 # Enable Decap CMS editorial workflow (Drafts, In Review, Ready to Publish)
 publish_mode: editorial_workflow
 
-# Enable Decap CMS local proxy server (run `npx decap-server` for zero-auth local editing)
+# Enable Decap CMS local proxy server (run `npx decap-server` or `npm run cms` for zero-auth local editing)
 local_backend: true
 
 # Media / Uploads storage
@@ -14,28 +14,39 @@ public_folder: "/assets/uploads"
 
 collections:
   # =============================================================
-  # 1. Pages & Global Settings Collection
+  # 1. Home Page
   # =============================================================
-  - name: "pages"
-    label: "Pages & Settings"
+  - name: "home"
+    label: "Home Page"
     delete: false
     files:
-      # Home Page Data
       - name: "home"
         label: "Home Page"
         file: "src/_data/home.json"
         fields:
           - { label: "Draft Mode", name: "draft", widget: "boolean", default: false, hint: "Turn on to mark page as draft" }
           - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
-          - { label: "Hero Headline", name: "heroHeadline", widget: "string" }
-          - { label: "Hero Description", name: "heroDescription", widget: "text" }
+          - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false, hint: "Pill badge above main headline (e.g. Open to Opportunities)" }
+          - { label: "Hero Headline", name: "heroHeadline", widget: "string", hint: "Large bold headline on the homepage" }
+          - { label: "Hero Description", name: "heroDescription", widget: "text", hint: "Introductory paragraph under headline" }
           - { label: "Hero Profile Image", name: "heroImage", widget: "image" }
-          - { label: "Portfolio Section Heading", name: "portfolioHeading", widget: "string", default: "Portfolio Works" }
+          - { label: "Primary Button Text", name: "heroCtaPrimaryText", widget: "string", default: "Explore Portfolio" }
+          - { label: "Primary Button Link", name: "heroCtaPrimaryUrl", widget: "string", default: "/portfolio/" }
+          - { label: "Secondary Button Text", name: "heroCtaSecondaryText", widget: "string", default: "About & Experience" }
+          - { label: "Secondary Button Link", name: "heroCtaSecondaryUrl", widget: "string", default: "/about/" }
+          - { label: "Portfolio Section Heading", name: "portfolioHeading", widget: "string", default: "Projects" }
           - { label: "Portfolio Section Subheading", name: "portfolioSubheading", widget: "string", default: "Showcase" }
+          - { label: "Portfolio View All Button Text", name: "portfolioViewAllText", widget: "string", default: "View all portfolio works" }
           - { label: "Blog Section Heading", name: "blogHeading", widget: "string", default: "Recent Articles" }
+          - { label: "Blog View All Button Text", name: "blogViewAllText", widget: "string", default: "View all articles" }
 
-      # About Page Data
+  # =============================================================
+  # 2. About Page
+  # =============================================================
+  - name: "about"
+    label: "About Page"
+    delete: false
+    files:
       - name: "about"
         label: "About Page"
         file: "src/_data/about.json"
@@ -43,27 +54,27 @@ collections:
           - { label: "Draft Mode", name: "draft", widget: "boolean", default: false, hint: "Turn on to mark page as draft" }
           - { label: "Page Title", name: "title", widget: "string" }
           - { label: "Page Description", name: "description", widget: "text" }
-          - { label: "Headline", name: "headline", widget: "string" }
+          - { label: "Profile Headline", name: "headline", widget: "string" }
           - { label: "Profile Image", name: "profileImage", widget: "image" }
-          - { label: "Status Badge", name: "statusBadge", widget: "string", required: false }
-          - { label: "Status Location", name: "statusLocation", widget: "string" }
+          - { label: "Status Badge", name: "statusBadge", widget: "string", required: false, hint: "e.g. Open to Opportunities" }
+          - { label: "Status Location", name: "statusLocation", widget: "string", default: "West Bengal, India" }
           - { label: "Short Bio", name: "bioShort", widget: "text" }
-          - label: "Highlight Metrics"
+          - label: "Highlight Metrics (At a Glance)"
             name: "metrics"
             widget: "list"
             fields:
-              - { label: "Metric Value", name: "value", widget: "string" }
-              - { label: "Metric Label", name: "label", widget: "string" }
-          - { label: "Journey Section Headline", name: "journeyHeadline", widget: "string" }
+              - { label: "Metric Value", name: "value", widget: "string", hint: "e.g. 3+, 6+, 99+, 0kb" }
+              - { label: "Metric Label", name: "label", widget: "string", hint: "e.g. Years of Coding" }
+          - { label: "Journey Section Headline", name: "journeyHeadline", widget: "string", default: "The Journey & Philosophy" }
           - label: "Journey & Philosophy Paragraphs"
             name: "journeyParagraphs"
             widget: "list"
-            field: { label: "Paragraph (HTML supported)", name: "para", widget: "text" }
-          - label: "Career Milestones"
+            field: { label: "Paragraph (HTML supported)", widget: "text" }
+          - label: "Career Milestones (Timeline)"
             name: "experience"
             widget: "list"
             fields:
-              - { label: "Time Period", name: "period", widget: "string" }
+              - { label: "Time Period", name: "period", widget: "string", hint: "e.g. Jul 2025 — Dec 2025" }
               - { label: "Role Title", name: "role", widget: "string" }
               - { label: "Company / Organization", name: "company", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
@@ -74,17 +85,26 @@ collections:
             fields:
               - { label: "Degree Name", name: "degree", widget: "string" }
               - { label: "Period", name: "period", widget: "string" }
-              - { label: "Focus / Field", name: "field", widget: "string" }
+              - { label: "Focus / Field / Institution", name: "field", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
           - label: "What I'm Exploring Right Now"
             name: "exploring"
             widget: "object"
             fields:
-              - { label: "Section Title", name: "title", widget: "string" }
-              - { label: "Last Updated Note", name: "updated", widget: "string" }
-              - { label: "Bullet Items (HTML supported)", name: "items", widget: "list" }
+              - { label: "Section Title", name: "title", widget: "string", default: "What I'm Exploring Right Now" }
+              - { label: "Last Updated Note", name: "updated", widget: "string", default: "Updated October 2026" }
+              - label: "Bullet Items (HTML supported)"
+                name: "items"
+                widget: "list"
+                field: { label: "Bullet Text", widget: "text" }
 
-      # Resume Page Data
+  # =============================================================
+  # 3. Resume / CV Page
+  # =============================================================
+  - name: "resume"
+    label: "Resume / CV Page"
+    delete: false
+    files:
       - name: "resume"
         label: "Resume / CV Page"
         file: "src/_data/resume.json"
@@ -92,28 +112,29 @@ collections:
           - { label: "Draft Mode", name: "draft", widget: "boolean", default: false, hint: "Turn on to mark page as draft" }
           - { label: "Page Title", name: "title", widget: "string" }
           - { label: "Page Description", name: "description", widget: "text" }
-          - { label: "Heading", name: "heading", widget: "string" }
-          - { label: "Last Updated Note", name: "updated", widget: "string" }
-          - { label: "Availability Status", name: "availability", widget: "string", required: false }
+          - { label: "Heading", name: "heading", widget: "string", default: "Curriculum Vitae" }
+          - { label: "Last Updated Note", name: "updated", widget: "string", default: "Updated October 2026" }
+          - { label: "Availability Status", name: "availability", widget: "string", required: false, hint: "e.g. Available for Opportunities" }
+          - { label: "Pronouns", name: "pronouns", widget: "string", required: false }
           - { label: "Role Headline", name: "roleHeadline", widget: "string" }
           - { label: "Executive Summary", name: "summary", widget: "text" }
-          - { label: "Location", name: "location", widget: "string" }
-          - label: "Education"
+          - { label: "Location", name: "location", widget: "string", default: "West Bengal, India • Remote" }
+          - label: "01. Education"
             name: "education"
             widget: "object"
             fields:
               - { label: "Degree", name: "degree", widget: "string" }
               - { label: "Period", name: "period", widget: "string" }
-              - { label: "Field", name: "field", widget: "string" }
-              - { label: "Core Focus", name: "focus", widget: "text" }
+              - { label: "Field & Institution", name: "field", widget: "string" }
+              - { label: "Core Focus Areas", name: "focus", widget: "text" }
               - { label: "Distinction / Honor", name: "distinction", widget: "string", required: false }
-          - label: "Technical Competencies"
+          - label: "02. Technical Competencies"
             name: "competencies"
             widget: "list"
             fields:
               - { label: "Category", name: "category", widget: "string" }
               - { label: "Details", name: "details", widget: "text" }
-          - label: "Professional Experience"
+          - label: "03. Professional Experience"
             name: "experience"
             widget: "list"
             fields:
@@ -122,8 +143,11 @@ collections:
               - { label: "Company", name: "company", widget: "string" }
               - { label: "Company / LinkedIn URL", name: "companyUrl", widget: "string", required: false }
               - { label: "Department / Location", name: "department", widget: "string" }
-              - { label: "Key Achievements", name: "bullets", widget: "list" }
-          - label: "Industry Certifications & Accreditations"
+              - label: "Key Achievements"
+                name: "bullets"
+                widget: "list"
+                field: { label: "Achievement Bullet", widget: "text" }
+          - label: "04. Industry Certifications & Accreditations"
             name: "certifications"
             widget: "list"
             fields:
@@ -132,8 +156,11 @@ collections:
               - { label: "Issuing Organization", name: "issuer", widget: "string" }
               - { label: "Date Issued", name: "issued", widget: "string" }
               - { label: "Verification / Credly URL", name: "url", widget: "string" }
-              - { label: "Skills (comma-separated or list)", name: "skills", widget: "list" }
-          - label: "Selected Works & Systems"
+              - label: "Skills (Tags)"
+                name: "skills"
+                widget: "list"
+                field: { label: "Skill Name", widget: "string" }
+          - label: "05. Selected Works & Systems"
             name: "selectedWorks"
             widget: "list"
             fields:
@@ -141,39 +168,89 @@ collections:
               - { label: "Project URL", name: "url", widget: "string" }
               - { label: "Tags", name: "tags", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
-          - label: "Honors & Leadership"
+          - label: "06. Honors & Leadership"
             name: "honors"
             widget: "list"
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Subtitle", name: "subtitle", widget: "string" }
 
-      # Portfolio Listing Header Data
-      - name: "portfolioPage"
-        label: "Portfolio Listing Header"
-        file: "src/_data/portfolioPage.json"
-        fields:
-          - { label: "Draft Mode", name: "draft", widget: "boolean", default: false, hint: "Turn on to mark page as draft" }
-          - { label: "Meta Title", name: "title", widget: "string" }
-          - { label: "Heading", name: "heading", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
+  # =============================================================
+  # 4. Portfolio Projects Collection (Markdown Case Studies)
+  # =============================================================
+  - name: "portfolio"
+    label: "Portfolio Projects"
+    label_singular: "Portfolio Project"
+    folder: "src/content/portfolio"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Draft Mode", name: "draft", widget: "boolean", default: false, hint: "Turn on to keep as draft without publishing to public showcase" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, required: false }
+      - { label: "Cover Image", name: "image", widget: "image", required: false }
+      - { label: "Client / Category", name: "client", widget: "string", required: false }
+      - { label: "Role", name: "role", widget: "string", required: false }
+      - { label: "Live Project URL", name: "liveUrl", widget: "string", required: false }
+      - { label: "GitHub Repository URL", name: "githubUrl", widget: "string", required: false }
+      - { label: "Tags", name: "tags", widget: "list", default: [ "portfolio" ] }
+      - { label: "Body Content (Markdown)", name: "body", widget: "markdown" }
 
-      # Blog Listing Header Data
-      - name: "blogPage"
-        label: "Blog Listing Header"
-        file: "src/_data/blogPage.json"
-        fields:
-          - { label: "Draft Mode", name: "draft", widget: "boolean", default: false, hint: "Turn on to mark page as draft" }
-          - { label: "Meta Title", name: "title", widget: "string" }
-          - { label: "Heading", name: "heading", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
+  # =============================================================
+  # 5. Blog Articles Collection (Markdown Articles)
+  # =============================================================
+  - name: "blog"
+    label: "Blog Articles"
+    label_singular: "Blog Article"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Draft Mode", name: "draft", widget: "boolean", default: false, hint: "Turn on to keep as draft without publishing to public blog" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Cover Image", name: "image", widget: "image", required: false }
+      - { label: "Tags", name: "tags", widget: "list", default: [ "blog" ] }
+      - { label: "Body Content (Markdown)", name: "body", widget: "markdown" }
 
-      # Infinite Scroll Tech Stack Ticker
+  # =============================================================
+  # 6. Global Site Settings & Navigation
+  # =============================================================
+  - name: "settings"
+    label: "Global Settings & Other Pages"
+    delete: false
+    files:
+      - name: "site"
+        label: "Site Settings & SEO"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Author Name", name: "name", widget: "string" }
+          - { label: "Pronouns", name: "pronouns", widget: "string", required: false }
+          - { label: "Default Site Title", name: "title", widget: "string" }
+          - { label: "Default Description", name: "description", widget: "text" }
+          - { label: "Production Canonical URL", name: "url", widget: "string", default: "https://debosmitarit.me" }
+          - { label: "Default Social Share Image", name: "image", widget: "image" }
+          - { label: "Meta Keywords (comma-separated)", name: "keywords", widget: "string", required: false }
+          - { label: "Role / Tagline", name: "role", widget: "string" }
+          - { label: "GitHub URL", name: "github", widget: "string" }
+          - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
+          - { label: "Twitter / X URL", name: "twitter", widget: "string" }
+          - { label: "Twitter Handle", name: "twitterHandle", widget: "string", default: "@DebosmitaRit", required: false }
+          - { label: "Resume PDF File", name: "resume", widget: "file" }
+          - { label: "Footer Copyright Note", name: "footerCopyright", widget: "string", default: "© 2026 Debosmita Rit. All rights reserved.", required: false }
+          - { label: "Built With Name", name: "builtWithText", widget: "string", default: "11ty", required: false }
+          - { label: "Built With Link URL", name: "builtWithUrl", widget: "string", default: "https://www.11ty.dev/", required: false }
+          - { label: "Google Search Console Verification Code", name: "googleSiteVerification", widget: "string", required: false }
+          - { label: "Bing Webmaster Tools Verification Code", name: "bingSiteVerification", widget: "string", required: false }
+
       - name: "techStack"
         label: "Infinite Scroll Tech Stack"
         file: "src/_data/techStack.json"
         fields:
-          - { label: "Enable Ticker Strip (Turn off to hide/draft)", name: "enabled", widget: "boolean", default: true }
+          - { label: "Enable Ticker Strip (Turn off to hide)", name: "enabled", widget: "boolean", default: true }
           - { label: "Scroll Speed (seconds for 1 full loop)", name: "speed", widget: "number", value_type: "int", default: 38, min: 10, max: 120 }
           - label: "Tech Stack Items"
             name: "items"
@@ -211,33 +288,8 @@ collections:
                   - { label: "Code / Terminal", value: "code" }
                   - { label: "Custom Uploaded Icon", value: "custom" }
                 default: "code"
-              - { label: "Custom Icon SVG or Image File", name: "customIcon", widget: "image", required: false, hint: "Upload custom SVG or PNG if 'Custom Uploaded Icon' is selected" }
+              - { label: "Custom Icon SVG or Image File", name: "customIcon", widget: "image", required: false }
 
-      # Site Global Settings & SEO
-      - name: "site"
-        label: "Site Settings & SEO"
-        file: "src/_data/site.json"
-        fields:
-          - { label: "Author Name", name: "name", widget: "string" }
-          - { label: "Pronouns", name: "pronouns", widget: "string", required: false }
-          - { label: "Default Site Title", name: "title", widget: "string" }
-          - { label: "Default Description", name: "description", widget: "text" }
-          - { label: "Production Canonical URL", name: "url", widget: "string", default: "https://debosmitarit.me" }
-          - { label: "Default Social Share Image", name: "image", widget: "image" }
-          - { label: "Meta Keywords (comma-separated)", name: "keywords", widget: "string", required: false }
-          - { label: "Role / Tagline", name: "role", widget: "string" }
-          - { label: "GitHub URL", name: "github", widget: "string" }
-          - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
-          - { label: "Twitter / X URL", name: "twitter", widget: "string" }
-          - { label: "Twitter Handle", name: "twitterHandle", widget: "string", default: "@DebosmitaRit", required: false }
-          - { label: "Resume PDF File", name: "resume", widget: "file" }
-          - { label: "Footer Copyright Note", name: "footerCopyright", widget: "string", default: "© 2026 Debosmita Rit. All rights reserved.", required: false }
-          - { label: "Built With Name", name: "builtWithText", widget: "string", default: "11ty", required: false }
-          - { label: "Built With Link URL", name: "builtWithUrl", widget: "string", default: "https://www.11ty.dev/", required: false }
-          - { label: "Google Search Console Verification Code", name: "googleSiteVerification", widget: "string", required: false }
-          - { label: "Bing Webmaster Tools Verification Code", name: "bingSiteVerification", widget: "string", required: false }
-
-      # Links for Other Sites / Socials
       - name: "links"
         label: "Links for Other Sites & Socials"
         file: "src/_data/links.json"
@@ -254,7 +306,6 @@ collections:
               - { label: "Show in Navigation Dropdown", name: "showInNav", widget: "boolean", default: true }
               - { label: "Show in Footer & Hero", name: "showInFooter", widget: "boolean", default: true }
 
-      # Banners & Little Notices
       - name: "banners"
         label: "Banners & Notices"
         file: "src/_data/banners.json"
@@ -272,49 +323,26 @@ collections:
             name: "cookieConsent"
             widget: "object"
             fields:
-              - { label: "Enable Cookie Notice", name: "enabled", widget: "boolean", default: true }
+              - { label: "Enable Cookie Notice", name: "enabled", widget: "boolean", default: false }
               - { label: "Notice Title", name: "title", widget: "string", default: "Cookie Notice" }
               - { label: "Notice Message", name: "message", widget: "text", default: "We use cookies to analyze web performance and deliver an optimal browsing experience. You can adjust your preferences or dismiss this anytime." }
               - { label: "Decline Button Text", name: "declineText", widget: "string", default: "Decline" }
               - { label: "Accept Button Text", name: "acceptText", widget: "string", default: "Accept All" }
 
-  # =============================================================
-  # 2. Portfolio Projects Collection (Markdown files)
-  # =============================================================
-  - name: "portfolio"
-    label: "Portfolio Projects"
-    label_singular: "Portfolio Project"
-    folder: "src/content/portfolio"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Draft Mode", name: "draft", widget: "boolean", default: false, hint: "Turn on to keep as draft without publishing to public portfolio showcase and sitemaps" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD" }
-      - { label: "Summary", name: "summary", widget: "text" }
-      - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, required: false }
-      - { label: "Cover Image", name: "image", widget: "image", required: false }
-      - { label: "Client / Category", name: "client", widget: "string", required: false }
-      - { label: "Role", name: "role", widget: "string", required: false }
-      - { label: "Live Project URL", name: "liveUrl", widget: "string", required: false }
-      - { label: "GitHub Repository URL", name: "githubUrl", widget: "string", required: false }
-      - { label: "Tags", name: "tags", widget: "list", default: [ "portfolio" ] }
-      - { label: "Body Content (Markdown)", name: "body", widget: "markdown" }
+      - name: "portfolioPage"
+        label: "Portfolio Listing Header"
+        file: "src/_data/portfolioPage.json"
+        fields:
+          - { label: "Draft Mode", name: "draft", widget: "boolean", default: false, hint: "Turn on to mark page as draft" }
+          - { label: "Meta Title", name: "title", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
 
-  # =============================================================
-  # 3. Blog Articles Collection (Markdown files)
-  # =============================================================
-  - name: "blog"
-    label: "Blog Articles"
-    label_singular: "Blog Article"
-    folder: "src/content/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Draft Mode", name: "draft", widget: "boolean", default: false, hint: "Turn on to keep as draft without publishing to public blog listing and sitemaps" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Cover Image", name: "image", widget: "image", required: false }
-      - { label: "Tags", name: "tags", widget: "list", default: [ "blog" ] }
-      - { label: "Body Content (Markdown)", name: "body", widget: "markdown" }
+      - name: "blogPage"
+        label: "Blog Listing Header"
+        file: "src/_data/blogPage.json"
+        fields:
+          - { label: "Draft Mode", name: "draft", widget: "boolean", default: false, hint: "Turn on to mark page as draft" }
+          - { label: "Meta Title", name: "title", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }

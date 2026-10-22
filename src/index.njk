@@ -30,10 +30,10 @@ eleventyComputed:
 
         <div class="mt-8 flex flex-wrap items-center gap-4">
           <a
-            href="/portfolio/"
+            href="{{ home.heroCtaPrimaryUrl or '/portfolio/' }}"
             class="inline-flex items-center justify-center gap-2 rounded-xl bg-neutral-950 dark:bg-white px-6 py-3.5 text-sm font-medium text-white dark:text-neutral-950 shadow-sm transition hover:bg-neutral-800 dark:hover:bg-neutral-200 group"
           >
-            <span>Explore Portfolio</span>
+            <span>{{ home.heroCtaPrimaryText or 'Explore Portfolio' }}</span>
             <svg
               class="w-4 h-4 transition-transform group-hover:translate-x-0.5"
               viewBox="0 0 24 24"
@@ -48,10 +48,10 @@ eleventyComputed:
             </svg>
           </a>
           <a
-            href="/about/"
+            href="{{ home.heroCtaSecondaryUrl or '/about/' }}"
             class="inline-flex items-center justify-center rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 px-6 py-3.5 text-sm font-medium text-neutral-800 dark:text-neutral-200 shadow-2xs transition hover:bg-neutral-100 dark:hover:bg-neutral-800"
           >
-            About &amp; Experience
+            {{ home.heroCtaSecondaryText or 'About & Experience' }}
           </a>
 
           <!-- Social Links -->
@@ -129,7 +129,7 @@ eleventyComputed:
         href="/portfolio/"
         class="font-mono text-xs font-semibold text-neutral-900 dark:text-neutral-200 hover:text-neutral-600 dark:hover:text-white inline-flex items-center gap-1.5 group"
       >
-        <span>View all portfolio works</span>
+        <span>{{ home.portfolioViewAllText or "View all portfolio works" }}</span>
         <svg
           class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5"
           viewBox="0 0 24 24"
@@ -230,7 +230,7 @@ eleventyComputed:
         href="/blog/"
         class="font-mono text-xs font-semibold text-neutral-900 dark:text-neutral-200 hover:text-neutral-600 dark:hover:text-white inline-flex items-center gap-1.5 group"
       >
-        <span>View all articles</span>
+        <span>{{ home.blogViewAllText or "View all articles" }}</span>
         <svg
           class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5"
           viewBox="0 0 24 24"
