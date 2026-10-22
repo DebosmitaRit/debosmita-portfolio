@@ -563,7 +563,7 @@
                   ),
                   bullets.length > 0 ? h('ul', { className: 'mt-3 space-y-1.5 text-xs text-neutral-700 list-disc list-outside pl-4 leading-relaxed' },
                     bullets.map(function (b, bIdx) {
-                      var text = typeof b === 'string' ? b : '';
+                      var text = typeof b === 'string' ? b : (b.bullet || '');
                       return h('li', { key: bIdx }, text);
                     })
                   ) : null
@@ -592,7 +592,8 @@
                   ),
                   skillsList.length > 0 ? h('div', { className: 'flex flex-wrap gap-1 mt-3 pt-3 border-t border-neutral-100' },
                     skillsList.map(function (s, sIdx) {
-                      return h('span', { key: sIdx, className: 'px-2 py-0.5 rounded text-[10px] font-mono bg-neutral-50 text-neutral-600 border border-neutral-200' }, typeof s === 'string' ? s : '');
+                      var text = typeof s === 'string' ? s : (s.skill || '');
+                      return h('span', { key: sIdx, className: 'px-2 py-0.5 rounded text-[10px] font-mono bg-neutral-50 text-neutral-600 border border-neutral-200' }, text);
                     })
                   ) : null
                 );

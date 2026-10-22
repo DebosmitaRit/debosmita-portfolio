@@ -184,10 +184,12 @@ collections:
     folder: "src/content/portfolio"
     create: true
     slug: "{{slug}}"
+    summary: "{{date}} — {{title}}"
+    sortable_fields: ["date", "title"]
     fields:
       - { label: "Draft Mode", name: "draft", widget: "boolean", default: false, hint: "Turn on to keep as draft without publishing to public showcase" }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true, default: "{{now}}", required: true }
       - { label: "Summary", name: "summary", widget: "text" }
       - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, required: false }
       - { label: "Cover Image", name: "image", widget: "image", required: false }
