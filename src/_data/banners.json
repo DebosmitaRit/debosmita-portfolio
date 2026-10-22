@@ -1,0 +1,16 @@
+{
+  "announcement": {
+    "enabled": true,
+    "badge": "Open to Work",
+    "text": "Actively seeking Part-time Remote roles in Data Analysis, Data Entry & Tech",
+    "link": "/resume/",
+    "linkText": "View Resume →"
+  },
+  "cookieConsent": {
+    "enabled": false,
+    "title": "Cookie Notice",
+    "message": "We use cookies to analyze web performance and deliver an optimal browsing experience. You can adjust your preferences or dismiss this anytime.",
+    "acceptText": "Accept All",
+    "declineText": "Decline"
+  }
+}

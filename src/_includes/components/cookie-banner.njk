@@ -1,0 +1,64 @@
+{% if banners.cookieConsent.enabled !== false %}
+<!-- Pines UI Cookie Banner Component (DevDojo) -->
+<div x-data="{
+        cookieBannerVisible: false,
+        cookieBannerVisibleAfter: 600,
+        bannerOffset: false,
+        init() {
+            if (!localStorage.getItem('cookieConsent')) {
+                setTimeout(() => { this.cookieBannerVisible = true }, this.cookieBannerVisibleAfter);
+            }
+            window.addEventListener('announcement-banner-change', (e) => {
+                this.bannerOffset = !!e.detail.visible;
+            });
+        },
+        accept() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            this.cookieBannerVisible = false;
+        },
+        deny() {
+            localStorage.setItem('cookieConsent', 'denied');
+            this.cookieBannerVisible = false;
+        }
+    }" 
+    x-show="cookieBannerVisible" 
+    x-transition:enter="transition ease-out duration-500" 
+    x-transition:enter-start="translate-y-full opacity-0" 
+    x-transition:enter-end="translate-y-0 opacity-100" 
+    x-transition:leave="transition ease-in duration-300" 
+    x-transition:leave-start="translate-y-0 opacity-100" 
+    x-transition:leave-end="translate-y-full opacity-0" 
+    :class="bannerOffset ? 'bottom-12 sm:bottom-10' : 'bottom-0'"
+    class="fixed right-0 z-50 w-full h-auto duration-300 ease-out sm:px-5 sm:pb-5 sm:w-md lg:w-full pointer-events-none transition-[bottom]" 
+    x-cloak>
+    <div class="pointer-events-auto flex flex-col items-center justify-between w-full h-full max-w-4xl p-5 sm:p-6 mx-auto bg-white dark:bg-neutral-900 border border-neutral-200/90 dark:border-neutral-800 shadow-2xl rounded-2xl lg:p-7 lg:flex-row">
+        <div class="flex flex-col items-start h-full pb-4 sm:pb-6 text-xs lg:items-center lg:flex-row lg:pb-0 lg:pr-6 lg:space-x-4 text-neutral-600 dark:text-neutral-400">
+            <!-- Cookie Icon -->
+            <div class="flex items-center justify-center w-11 h-11 rounded-xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 border border-amber-200/70 dark:border-amber-900/50 shrink-0 mb-3 lg:mb-0 shadow-2xs">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5" />
+                    <path d="M8.5 8.5v.01" />
+                    <path d="M16 15.5v.01" />
+                    <path d="M12 12v.01" />
+                    <path d="M11 17v.01" />
+                    <path d="M7 14v.01" />
+                </svg>
+            </div>
+            <div class="pt-1 lg:pt-0">
+                <h4 class="w-full mb-1 text-base sm:text-lg font-bold leading-none text-neutral-900 dark:text-white font-heading">{{ banners.cookieConsent.title or 'Cookie Notice' }}</h4>
+                <p class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                    {{ banners.cookieConsent.message | safe }}
+                </p>
+            </div>
+        </div>
+        <div class="flex items-center justify-end w-full space-x-2.5 sm:space-x-3 lg:shrink-0 lg:w-auto">
+            <button @click="deny()" type="button" class="inline-flex items-center justify-center flex-1 sm:flex-none px-4 py-2 text-xs sm:text-sm font-medium tracking-wide transition-colors duration-200 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-neutral-700 dark:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-700 hover:text-neutral-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-neutral-400">
+                {{ banners.cookieConsent.declineText or 'Decline' }}
+            </button>
+            <button @click="accept()" type="button" class="inline-flex items-center justify-center flex-1 sm:flex-none px-4 py-2 text-xs sm:text-sm font-medium tracking-wide text-white dark:text-neutral-950 transition-colors duration-200 rounded-lg bg-neutral-950 dark:bg-white border border-neutral-950 dark:border-white hover:bg-neutral-800 dark:hover:bg-neutral-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-900 shadow-sm">
+                {{ banners.cookieConsent.acceptText or 'Accept All' }}
+            </button>
+        </div>
+    </div>
+</div>
+{% endif %}

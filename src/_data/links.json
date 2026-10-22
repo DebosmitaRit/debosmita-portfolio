@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "title": "GitHub",
+      "subtitle": "Repositories & Code",
+      "url": "https://github.com/DebosmitaRit",
+      "icon": "github",
+      "showInNav": true,
+      "showInFooter": true
+    },
+    {
+      "title": "LinkedIn",
+      "subtitle": "Professional Network",
+      "url": "https://www.linkedin.com/in/debosmitarit/",
+      "icon": "linkedin",
+      "showInNav": true,
+      "showInFooter": true
+    },
+    {
+      "title": "Credly",
+      "subtitle": "Verified Badges & Certifications",
+      "url": "https://www.credly.com/badges/51591849-4d97-4af4-8e43-bfaa871bfbaa/linked_in_profile",
+      "icon": "credly",
+      "showInNav": true,
+      "showInFooter": true
+    }
+  ]
+}

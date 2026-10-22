@@ -1,0 +1,13 @@
+---
+permalink: "/robots.txt"
+eleventyExcludeFromCollections: true
+---
+User-agent: *
+Allow: /
+
+# Disallow search engine crawlers from indexing Decap CMS backend admin
+Disallow: /admin/
+Disallow: /admin/*
+
+# Sitemap location for Google and Bing
+Sitemap: {{ site.url }}/sitemap.xml

@@ -1,0 +1,121 @@
+{# Pagination Component — Always displayed; unworkable/disabled when single page #}
+<nav
+  class="mt-12 flex items-center justify-between border-t border-neutral-200/80 dark:border-neutral-800 pt-6"
+  aria-label="Pagination"
+>
+  <div class="flex flex-1 items-center justify-between">
+    <!-- Previous Button -->
+    <div>
+      {% if pagination.href.previous %}
+        <a
+          href="{{ pagination.href.previous }}"
+          class="inline-flex items-center gap-1.5 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3.5 py-2 text-xs font-mono font-medium text-neutral-700 dark:text-neutral-300 shadow-2xs hover:bg-neutral-50 dark:hover:bg-neutral-700 hover:text-black dark:hover:text-white transition group"
+        >
+          <svg
+            class="w-3.5 h-3.5 transition-transform group-hover:-translate-x-0.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Previous</span>
+        </a>
+      {% else %}
+        <span
+          class="inline-flex items-center gap-1.5 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-100/70 dark:bg-neutral-900/70 px-3.5 py-2 text-xs font-mono text-neutral-400 dark:text-neutral-600 cursor-not-allowed select-none"
+        >
+          <svg
+            class="w-3.5 h-3.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Previous</span>
+        </span>
+      {% endif %}
+    </div>
+
+    <!-- Page Numbers List -->
+    <div class="hidden sm:flex items-center gap-1">
+      {% if pagination.pages and pagination.pages.length > 0 %}
+        {% for pageEntry in pagination.pages %}
+          {% set pageIdx = loop.index0 %}
+          {% set pageUrl = pagination.hrefs[pageIdx] %}
+          {% if pageIdx == pagination.pageNumber %}
+            <span
+              class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-950 dark:bg-white text-xs font-mono font-bold text-white dark:text-neutral-950 shadow-xs select-none"
+            >
+              {{ loop.index }}
+            </span>
+          {% else %}
+            <a
+              href="{{ pageUrl }}"
+              class="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-xs font-mono font-medium text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-700 hover:text-black dark:hover:text-white transition shadow-2xs"
+            >
+              {{ loop.index }}
+            </a>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        <span
+          class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-950 dark:bg-white text-xs font-mono font-bold text-white dark:text-neutral-950 shadow-xs select-none"
+        >
+          1
+        </span>
+      {% endif %}
+    </div>
+
+    <!-- Next Button -->
+    <div>
+      {% if pagination.href.next %}
+        <a
+          href="{{ pagination.href.next }}"
+          class="inline-flex items-center gap-1.5 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3.5 py-2 text-xs font-mono font-medium text-neutral-700 dark:text-neutral-300 shadow-2xs hover:bg-neutral-50 dark:hover:bg-neutral-700 hover:text-black dark:hover:text-white transition group"
+        >
+          <span>Next</span>
+          <svg
+            class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      {% else %}
+        <span
+          class="inline-flex items-center gap-1.5 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-100/70 dark:bg-neutral-900/70 px-3.5 py-2 text-xs font-mono text-neutral-400 dark:text-neutral-600 cursor-not-allowed select-none"
+        >
+          <span>Next</span>
+          <svg
+            class="w-3.5 h-3.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </span>
+      {% endif %}
+    </div>
+  </div>
+</nav>

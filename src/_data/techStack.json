@@ -1,0 +1,62 @@
+{
+  "enabled": true,
+  "speed": 30,
+  "items": [
+    {
+      "name": "Python",
+      "icon": "python"
+    },
+    {
+      "name": "Java",
+      "icon": "java"
+    },
+    {
+      "name": "AWS",
+      "icon": "aws"
+    },
+    {
+      "name": "SQL & Databases",
+      "icon": "database"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "javascript"
+    },
+    {
+      "name": "React",
+      "icon": "react"
+    },
+    {
+      "name": "Tailwind CSS",
+      "icon": "tailwind"
+    },
+    {
+      "name": "Node.js",
+      "icon": "node"
+    },
+    {
+      "name": "Eleventy",
+      "icon": "eleventy"
+    },
+    {
+      "name": "HTML5",
+      "icon": "html"
+    },
+    {
+      "name": "CSS3",
+      "icon": "css"
+    },
+    {
+      "name": "Git",
+      "icon": "git"
+    },
+    {
+      "name": "Docker",
+      "icon": "docker"
+    },
+    {
+      "name": "Vite",
+      "icon": "vite"
+    }
+  ]
+}
