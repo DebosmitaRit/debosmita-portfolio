@@ -32,21 +32,11 @@ I choosed BCA cuz I wanted to learn cybersecurity but didnt knew which course to
 
 ## 5 Things BCA Taught Me
 
-**1. Practice > Theory**
-
-Never underestimate MAKAUT University!
-
-**2. Start small, build real**
-From building CLI based programs to building this blog site using 11ty!
-
-**3. Errors are your friends**
-Every bug is just a clue in disguise.
-
-**4. Learn beyond the syllabus**
-YouTube is your free teacher.
-
-**5. Use GitHub early**
-It's your online resume, and it shows what you can *do*.
+1. **Practical > Theory:** Never underestimate MAKAUT University!
+2. **Start small, build real:** From building CLI based programs to building this blog site using 11ty!
+3. **Errors are your friends:** Every bug is just a clue in disguise.
+4. **Learn beyond the syllabus:** YouTube is your free teacher.
+5. **Use GitHub early:** It's your online resume, and it shows what you can *do*.
 
 - - -
 
