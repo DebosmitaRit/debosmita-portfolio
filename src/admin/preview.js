@@ -374,7 +374,7 @@
           h('h2', { className: 'font-heading text-2xl sm:text-3xl font-bold text-neutral-950 mb-4' }, journeyHeadline),
           h('div', { className: 'space-y-4 text-sm sm:text-base text-neutral-700 leading-relaxed font-sans' },
             paragraphsList.map(function (p, idx) {
-              var text = typeof p === 'string' ? p : (p.para || '');
+              var text = typeof p === 'string' ? p : (p.paragraph || p.para || '');
               return h('p', { key: idx }, text);
             })
           )

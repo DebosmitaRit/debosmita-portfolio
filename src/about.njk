@@ -148,7 +148,7 @@ eleventyComputed:
     </h2>
     <div class="space-y-5 text-base sm:text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed font-sans">
       {% for para in about.journeyParagraphs %}
-        <p>{{ (para.para if para.para else para) | safe }}</p>
+        <p>{{ (para.paragraph if para.paragraph else (para.para if para.para else para)) | safe }}</p>
       {% endfor %}
     </div>
   </section>
