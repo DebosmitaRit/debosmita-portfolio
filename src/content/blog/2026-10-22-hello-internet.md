@@ -1,14 +1,16 @@
 ---
 draft: false
-title: Hello Internet
-description: First Blog
+title: Hello Internet! This is my new website!
+description: This is my first blog post enjoy! I will be posting here often when
+  I get a chance or something unique happens
+image: /assets/uploads/laura-adai-zcaql983cx0-unsplash.jpg
 tags:
   - blog
 ---
-# Hey, I'm a BCA Student, and This Is My Story
+# Welcome to the site!
 
-Hi, I'm **\[Your Name]**.
-A BCA student at **\[Your College]**, learning to code, building things, and figuring it all out as I go.
+Hi, I'm Debosmita.
+A BCA student at TIHC, learning to code, building things, and figuring it all out as I go.
 
 This blog is my little corner of the internet. Think of it as my digital diary of **code, curiosity, and growth.**
 
@@ -16,36 +18,32 @@ This blog is my little corner of the internet. Think of it as my digital diary o
 
 ## Why BCA?
 
-I always wondered *"How do apps and websites actually work?"*
-
-BCA gave me the answer. It turned my curiosity into real skills, one line of code at a time.
+I choosed BCA cuz I wanted to learn cybersecurity but didnt knew which course to choose!
 
 - - -
 
 ## What I'm Learning
 
-* **Programming:** C, Java, Python
-* **Data Structures:** organizing data the smart way
-* **Databases & SQL:** where all the data lives
-* **Web Development:** HTML, CSS, JavaScript
-* **Networking & OS:** how the internet really works
-* **Software Engineering:** how real projects get built
+* **Programming:** C, Java, Python.
+* **Frontend**: HTML, CSS, JS, REACT, Bootstrap, TailwindCSS, 11ty and more
+* **Backend**: Spring Boot and PHP
 
 - - -
 
 ## 5 Things BCA Taught Me
 
 **1. Practice > Theory**
-Code a little every day. Even 30 minutes counts.
+
+Never underestimate MAKAUT University!
 
 **2. Start small, build real**
-A to-do app or a portfolio site teaches more than 10 lectures.
+From building CLI based programs to building this blog site using 11ty!
 
 **3. Errors are your friends**
 Every bug is just a clue in disguise.
 
 **4. Learn beyond the syllabus**
-freeCodeCamp, MDN Docs, and YouTube are your free teachers.
+YouTube is your free teacher.
 
 **5. Use GitHub early**
 It's your online resume, and it shows what you can *do*.
@@ -63,7 +61,7 @@ It's your online resume, and it shows what you can *do*.
 
 ## Tips for New BCA Students
 
-* Master **one language** first
+* Master **one language** first (like C)
 * Join tech clubs and online communities
 * Try **internships** or small freelance projects
 * Work on your **communication skills** too
@@ -74,7 +72,7 @@ It's your online resume, and it shows what you can *do*.
 ## Coming Soon on This Blog
 
 * Beginner-friendly tutorials
-* Project breakdowns
+* Project breakdowns (in Portfolio)
 * Study notes and exam tips
 * Career guidance after BCA
 
@@ -85,5 +83,3 @@ It's your online resume, and it shows what you can *do*.
 BCA opens the door, but **your effort, curiosity, and consistency** take you through it.
 
 Thanks for stopping by! If this helped you even a little, share it with a friend who's starting their tech journey.
-
-**Got questions or topic ideas? Reach me at \[your email / social link]**
