@@ -69,7 +69,7 @@ collections:
           - label: "Journey & Philosophy Paragraphs"
             name: "journeyParagraphs"
             widget: "list"
-            field: { label: "Paragraph (HTML supported)", widget: "text" }
+            field: { label: "Paragraph (HTML supported)", name: "paragraph", widget: "text" }
           - label: "Career Milestones (Timeline)"
             name: "experience"
             widget: "list"
@@ -96,7 +96,7 @@ collections:
               - label: "Bullet Items (HTML supported)"
                 name: "items"
                 widget: "list"
-                field: { label: "Bullet Text", widget: "text" }
+                field: { label: "Bullet Text", name: "bullet", widget: "text" }
 
   # =============================================================
   # 3. Resume / CV Page
@@ -146,7 +146,7 @@ collections:
               - label: "Key Achievements"
                 name: "bullets"
                 widget: "list"
-                field: { label: "Achievement Bullet", widget: "text" }
+                field: { label: "Achievement Bullet", name: "bullet", widget: "text" }
           - label: "04. Industry Certifications & Accreditations"
             name: "certifications"
             widget: "list"
@@ -159,7 +159,7 @@ collections:
               - label: "Skills (Tags)"
                 name: "skills"
                 widget: "list"
-                field: { label: "Skill Name", widget: "string" }
+                field: { label: "Skill Name", name: "skill", widget: "string" }
           - label: "05. Selected Works & Systems"
             name: "selectedWorks"
             widget: "list"
@@ -231,7 +231,7 @@ collections:
           - { label: "Pronouns", name: "pronouns", widget: "string", required: false }
           - { label: "Default Site Title", name: "title", widget: "string" }
           - { label: "Default Description", name: "description", widget: "text" }
-          - { label: "Production Canonical URL", name: "url", widget: "string", default: "https://debosmitarit.me" }
+          - { label: "Production Canonical URL", name: "url", widget: "string", default: "https://debosmitarit.netlify.app" }
           - { label: "Default Social Share Image", name: "image", widget: "image" }
           - { label: "Meta Keywords (comma-separated)", name: "keywords", widget: "string", required: false }
           - { label: "Role / Tagline", name: "role", widget: "string" }
