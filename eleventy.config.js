@@ -1,11 +1,27 @@
 // Built-in plugins from 11ty
 const {IdAttributePlugin} = require("@11ty/eleventy");
+const {execSync} = require("child_process");
+const fs = require("fs");
 
 // Official 11ty plugins in active use
 const {eleventyImageTransformPlugin} = require("@11ty/eleventy-img");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function (eleventyConfig) {
+    // -------------------------------------------------------------
+    // Ensure Tailwind CSS is compiled before Eleventy builds & copies assets
+    // -------------------------------------------------------------
+    eleventyConfig.on("eleventy.before", async () => {
+        const isServe = process.env.ELEVENTY_RUN_MODE === "serve";
+        const cssExists = fs.existsSync("src/css/output.css");
+        if (!isServe || !cssExists) {
+            try {
+                execSync("npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css", { stdio: "inherit" });
+            } catch (err) {
+                console.error("Failed to compile Tailwind CSS:", err);
+            }
+        }
+    });
     // -------------------------------------------------------------
     // Active 11ty Plugins:
     // -------------------------------------------------------------
